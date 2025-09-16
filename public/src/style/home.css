@@ -391,8 +391,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 7vw;
+  align-items: flex-start;
+  padding: 15vh 7vw 0;
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -898,7 +898,7 @@ min-height: auto !important; /* override content-wrapper min-height */
   }
   
   .content-wrapper {
-    padding: 0 4vw;
+    padding: 10vh 4vw 0;
   }
   
   h1 {
