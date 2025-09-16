@@ -351,13 +351,36 @@ body {
   object-fit: cover;
 }
 
+/* Desktop Video - Show on larger screens */
+.hero-video-desktop {
+  display: block;
+}
+
+/* Mobile Video - Hide on larger screens */
+.hero-video-mobile {
+  display: none;
+}
+
+/* Mobile responsive video switching */
+@media (max-width: 768px) {
+  /* Hide desktop video on mobile */
+  .hero-video-desktop {
+    display: none;
+  }
+  
+  /* Show mobile video on mobile */
+  .hero-video-mobile {
+    display: block;
+  }
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.3);
   z-index: -1;
 }
 

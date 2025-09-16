@@ -68,10 +68,17 @@
   <section class="hero-section">
     <!-- Background Video -->
     <div class="hero-video-background">
-      <video id="heroVideo" autoplay muted playsinline loop>
+      <!-- Desktop Video -->
+      <video id="heroVideoDesktop" class="hero-video-desktop" autoplay muted playsinline>
         <source src="../assets/logo-videos/_prompt_an_202509151835_bbii3.mp4" type="video/mp4">
         <source src="../assets/logo-videos/_prompt_ultracinematic_202509160157_3r9.mp4" type="video/mp4">
         <source src="../assets/logo-videos/_prompt_a_202509151602_elllg.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+      </video>
+      
+      <!-- Mobile Video -->
+      <video id="heroVideoMobile" class="hero-video-mobile" autoplay muted playsinline>
+        <source src="../assets/logo-videos/_prompt_ultracinematic_202509160157_3r9.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la balise vidéo.
       </video>
     </div>
@@ -97,62 +104,7 @@
             </div>
           </div>
 
-          <!-- Right Side - Booking Form -->
-          <div class="hero-booking-form">
-            <div class="hero-form-container">
-              <h2 class="form-title">Demandez votre devis gratuit</h2>
-              <form class="hero-booking-form-element" id="heroBookingForm">
-                <div class="hero-form-group">
-                  <label for="heroClientName">Nom complet *</label>
-                  <input type="text" id="heroClientName" name="clientName" required>
-                </div>
-
-                <div class="hero-form-group">
-                  <label for="heroClientPhone">Numéro de téléphone *</label>
-                  <input type="tel" id="heroClientPhone" name="clientPhone" required>
-                </div>
-
-                <div class="hero-form-group">
-                  <label for="heroClientAddress">Adresse *</label>
-                  <input type="text" id="heroClientAddress" name="clientAddress" required>
-                </div>
-
-                <div class="hero-form-group">
-                  <label for="heroServiceType">Type de service *</label>
-                  <select id="heroServiceType" name="serviceType" required>
-                    <option value="">Sélectionnez un service</option>
-                    <option value="nettoyage-bureau">Nettoyage bureau</option>
-                    <option value="femme-menage">Femme de ménage</option>
-                    <option value="nettoyage-fin-chantier">Nettoyage fin de chantier</option>
-                    <option value="nettoyage-vitres">Nettoyage des vitres</option>
-                    <option value="cristallisation-marbre">Cristallisation du marbre</option>
-                    <option value="nettoyage-moquette">Nettoyage de la moquette</option>
-                    <option value="gardiennage">Gardiennage</option>
-                    <option value="jardinage">Jardinage</option>
-                    <option value="deratisation">Dératisation</option>
-                    <option value="desinsectisation">Désinsectisation</option>
-                    <option value="solution-anti-pigeons">Solution anti pigeons</option>
-                    <option value="traitement-anti-cafard">Traitement anti cafard</option>
-                    <option value="traitement-anti-acarien">Traitement anti acarien</option>
-                    <option value="traitement-sol">Traitement de sol</option>
-                    <option value="climatisation">Climatisation</option>
-                    <option value="filet-protection-chat">Filet protection de chat</option>
-                    <option value="traitement-souris">Traitement souris</option>
-                  </select>
-                </div>
-
-                <div class="hero-form-group">
-                  <label for="heroMessage">Message</label>
-                  <textarea id="heroMessage" name="message" rows="3" placeholder="Décrivez vos besoins spécifiques..."></textarea>
-                </div>
-
-                <button type="submit" class="hero-submit-btn">
-                  Obtenir mon devis gratuit
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+                  </div>
       </div>
     </div>
   </section>
@@ -649,68 +601,60 @@
       });
   </script>
   <script>
-    // Video control with better error handling
-    const heroVideo = document.getElementById('heroVideo');
+    // Video control with better error handling for both desktop and mobile videos
+    const heroVideoDesktop = document.getElementById('heroVideoDesktop');
+    const heroVideoMobile = document.getElementById('heroVideoMobile');
     
-    // Add event listeners for video debugging
-    heroVideo.addEventListener('loadstart', function() {
-      console.log('Video loading started');
-    });
+    // Function to add event listeners to a video element
+    function addVideoEventListeners(video, videoType) {
+      video.addEventListener('loadstart', function() {
+        console.log(`${videoType} video loading started`);
+      });
+      
+      video.addEventListener('loadeddata', function() {
+        console.log(`${videoType} video data loaded`);
+      });
+      
+      video.addEventListener('canplay', function() {
+        console.log(`${videoType} video can start playing`);
+      });
+      
+      video.addEventListener('error', function(e) {
+        console.error(`${videoType} video error:`, e);
+        console.error(`${videoType} video error details:`, video.error);
+      });
+      
+      video.addEventListener('ended', function() {
+        video.pause();
+        // Keep the last frame visible
+        video.currentTime = video.duration;
+      });
+    }
     
-    heroVideo.addEventListener('loadeddata', function() {
-      console.log('Video data loaded');
-    });
-    
-    heroVideo.addEventListener('canplay', function() {
-      console.log('Video can start playing');
-    });
-    
-    heroVideo.addEventListener('error', function(e) {
-      console.error('Video error:', e);
-      console.error('Video error details:', heroVideo.error);
-    });
-    
-    heroVideo.addEventListener('ended', function() {
-      heroVideo.pause();
-      // Keep the last frame visible
-      heroVideo.currentTime = heroVideo.duration;
-    });
+    // Add event listeners to both videos
+    addVideoEventListeners(heroVideoDesktop, 'Desktop');
+    addVideoEventListeners(heroVideoMobile, 'Mobile');
 
-    // Force video to play after page load
+    // Force videos to play after page load
     window.addEventListener('load', function() {
       setTimeout(function() {
-        if (heroVideo.paused) {
-          heroVideo.play().catch(function(error) {
-            console.error('Video autoplay failed:', error);
+        // Play desktop video if it's visible
+        if (window.getComputedStyle(heroVideoDesktop).display !== 'none' && heroVideoDesktop.paused) {
+          heroVideoDesktop.play().catch(function(error) {
+            console.error('Desktop video autoplay failed:', error);
+          });
+        }
+        
+        // Play mobile video if it's visible
+        if (window.getComputedStyle(heroVideoMobile).display !== 'none' && heroVideoMobile.paused) {
+          heroVideoMobile.play().catch(function(error) {
+            console.error('Mobile video autoplay failed:', error);
           });
         }
       }, 500);
     });
 
-    // Hero booking form submission
-    document.getElementById('heroBookingForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-      
-      // Basic validation
-      if (!data.clientName || !data.clientPhone || !data.clientAddress || !data.serviceType) {
-        alert('Veuillez remplir tous les champs obligatoires.');
-        return;
-      }
-      
-      // Here you would typically send the data to your server
-      console.log('Form data:', data);
-      
-      // Show success message
-      alert('Merci pour votre demande ! Nous vous contacterons bientôt.');
-      
-      // Reset form
-      this.reset();
-    });
-
+    
     // Floating Quote Icon and Modal functionality
     const floatingIcon = document.getElementById('floating-quote-icon');
     const floatingModal = document.getElementById('floating-form-modal');
