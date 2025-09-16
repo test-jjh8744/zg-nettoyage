@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS Variables and Base Styles */
+        :root {
+            --white-hsl: 0,0%,100%;
+            --black-hsl: 0,0%,0%;
+            --safeDarkAccent-hsl: 0,0%,0%;
+            --safeInverseLightAccent-hsl: 0,0%,0%;
+            --safeInverseDarkAccent-hsl: 0,0%,100%;
+            --accent-hsl: 76.36363636,24.44444444%,64.70588235%;
+            --lightAccent-hsl: 204,31.91489362%,90.78431373%;
+            --darkAccent-hsl: 180,5.52147239%,31.96078431%;
+            
+            --base-font-size: 15px;
+            --heading-font-font-family: "adobe-caslon-pro";
+            --heading-font-font-style: normal;
+            --heading-font-font-weight: 400;
+            --heading-font-text-transform: none;
+            --heading-font-letter-spacing: 0em;
+            --heading-font-line-height: 1.5em;
+            --body-font-font-family: "Work Sans";
+            --body-font-font-style: normal;
+            --body-font-font-weight: 400;
+            --body-font-text-transform: none;
+            --body-font-letter-spacing: .01em;
+            --body-font-line-height: 1.6em;
+            
+            --navigationLinkColor: hsla(var(--black-hsl),1);
+            --primaryButtonBackgroundColor: #2099d7;
+            --primaryButtonTextColor: hsla(var(--safeInverseDarkAccent-hsl),1);
+            --siteBackgroundColor: hsla(var(--white-hsl),1);
+            --paragraphMediumColor: hsla(var(--black-hsl),1);
+            
+            --site-navigation-font-font-family: "Work Sans";
+            --site-navigation-font-font-style: normal;
+            --site-navigation-font-font-weight: 400;
+            --site-navigation-font-text-transform: lowercase;
+            --site-navigation-font-letter-spacing: 0em;
+            --site-navigation-font-line-height: 1.6em;
+            --site-navigation-font-font-size-value: .93333333;
+            
+            --header-button-font-font-family: "Work Sans";
+            --header-button-font-font-style: normal;
+            --header-button-font-font-weight: 400;
+            --header-button-font-text-transform: none;
+            --header-button-font-letter-spacing: 0em;
+            --header-button-font-line-height: 1.2em;
+            --header-button-font-font-size-value: .9;
+            
+            --primary-button-padding-x: 2.004em;
+            --primary-button-padding-y: 1.2em;
+            --primary-button-stroke: 0px;
+        }
+
+        /* Header Styles */
+        .header-announcement-bar-wrapper {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            box-sizing: border-box;
+            padding-top: 1.5vw;
+            padding-bottom: 1.5vw;
+            padding-left: 4vw;
+            padding-right: 4vw;
+            pointer-events: auto;
+        }
+
+        .header-border {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header-dropshadow {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: inherit;
+        }
+
+        .header-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: opacity 400ms cubic-bezier(.4,0,.2,1);
+            will-change: opacity;
+        }
+
+        .header-background:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 400ms cubic-bezier(.4,0,.2,1);
+            will-change: opacity;
+        }
+
+        .header-display-desktop {
+            position: relative;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .header-display-mobile {
+            display: none;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .header-title-nav-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            flex: 1 0 67%;
+            align-items: center;
+        }
+
+        .header-title {
+            flex-grow: 0;
+            flex-shrink: 0;
+            backface-visibility: hidden;
+        }
+
+        .header-title-logo {
+            width: auto;
+            font-size: 0;
+        }
+
+        .header-title-logo a {
+            display: inline-block;
+            max-width: 100%;
+            max-height: 96px;
+        }
+
+        .header-title-logo img {
+            width: auto;
+            max-width: 100%;
+            max-height: 96px;
+            border: 0;
+        }
+
+        .header-nav {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        .header-layout-nav-right .header-nav {
+            text-align: right;
+            margin-left: auto;
+            padding-left: 4.5vw;
+        }
+
+        .header-nav-wrapper {
+            display: block;
+        }
+
+        .header-nav-list {
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+
+        .header-layout-nav-right .header-nav-list {
+            justify-content: flex-end;
+        }
+
+        .header-nav-item {
+            font-family: var(--site-navigation-font-font-family);
+            font-style: var(--site-navigation-font-font-style);
+            font-weight: var(--site-navigation-font-font-weight);
+            line-height: var(--site-navigation-font-line-height);
+            letter-spacing: var(--site-navigation-font-letter-spacing);
+            text-transform: var(--site-navigation-font-text-transform);
+        }
+
+        @media screen and (min-width: 768px), screen and (max-width: calc(1295px)) and (orientation: landscape) {
+            .header-nav-item {
+                font-size: calc((var(--site-navigation-font-font-size-value) - 1) * 1.2vw + 1rem);
+            }
+        }
+
+        @media screen and (min-width: 1296px) {
+            .header-nav-item {
+                font-size: calc(var(--site-navigation-font-font-size-value) * 1rem);
+            }
+        }
+
+        .header-nav-list > div {
+            white-space: nowrap;
+        }
+
+        .header-nav-list > div:not(.header-nav-item--folder) {
+            display: inline-flex;
+        }
+
+        .header-layout-nav-right .header-nav-item:not(:first-child):not(.header-actions-action--cart) {
+            margin-left: 4.4vw;
+        }
+
+        .header-nav-item a {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            backface-visibility: hidden;
+            padding: .1em 0;
+            color: var(--navigationLinkColor);
+            cursor: pointer;
+        }
+
+        .header-nav-wrapper a:hover {
+            opacity: 0.8;
+        }
+
+        /* Header Actions */
+        .header-actions {
+            flex-grow: 0;
+            flex-shrink: 1;
+            display: inline-flex;
+            align-items: center;
+            color: var(--navigationLinkColor);
+        }
+
+        .header-actions--right {
+            justify-content: flex-end;
+        }
+
+        .header-layout-nav-right .header-actions {
+            margin-right: 0;
+        }
+
+        .header-actions-action {
+            text-align: center;
+            line-height: 1;
+        }
+
+        .header-actions .header-actions-action--cta {
+            white-space: nowrap;
+        }
+
+        .header-actions--right .header-actions-action {
+            margin: 0 0 0 4.5vw;
+        }
+
+        /* Button Styles */
+        .btn {
+            position: relative;
+            display: inline-block;
+            line-height: normal;
+            padding: .96rem 1.6032rem;
+            transition: .1s opacity linear;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .header-actions .btn {
+            border-radius: 10px !important;
+        }
+
+        .sqs-button-element--primary {
+            color: var(--primaryButtonTextColor);
+            background-color: var(--primaryButtonBackgroundColor);
+            border-color: var(--primaryButtonBackgroundColor);
+            border-radius: 0;
+            transition: 0.1s opacity linear;
+            -webkit-backface-visibility: hidden;
+            font-family: var(--header-button-font-font-family);
+            font-style: var(--header-button-font-font-style);
+            font-weight: var(--header-button-font-font-weight);
+            line-height: var(--header-button-font-line-height);
+            letter-spacing: var(--header-button-font-letter-spacing);
+            text-transform: var(--header-button-font-text-transform);
+            padding: var(--primary-button-padding-y) var(--primary-button-padding-x);
+            border-width: var(--primary-button-stroke);
+            border-style: solid;
+        }
+
+        @media screen and (min-width: 768px), screen and (max-width: calc(1295px)) and (orientation: landscape) {
+            .sqs-button-element--primary {
+                font-size: calc((var(--header-button-font-font-size-value) - 1) * 1.2vw + 1rem);
+            }
+        }
+
+        @media screen and (min-width: 1296px) {
+            .sqs-button-element--primary {
+                font-size: calc(var(--header-button-font-font-size-value) * 1rem);
+            }
+        }
+
+        @media (hover: hover) {
+            .sqs-button-element--primary:hover {
+                opacity: 0.8;
+            }
+        }
+
+        /* Mobile Menu Burger */
+        .header-burger {
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .burger {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-family: inherit;
+            font-size: 100%;
+            margin: 0;
+            line-height: normal;
+            text-transform: none;
+            -webkit-appearance: button;
+        }
+
+        .burger-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+        }
+
+        .burger-inner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .top-bun, .patty, .bottom-bun {
+            height: 1px;
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            content: '';
+            width: 100%;
+            transition: transform 250ms cubic-bezier(.2,.6,.3,1), width 250ms cubic-bezier(.2,.6,.3,1);
+            will-change: transform, width;
+            background-color: var(--navigationLinkColor);
+        }
+
+        .burger-inner.header-menu-icon-tripleLineHamburger .top-bun {
+            transform: translatey(-9.5px);
+        }
+
+        .burger-inner.header-menu-icon-tripleLineHamburger .bottom-bun {
+            transform: translatey(9.5px);
+        }
+
+        /* Utility Classes */
+        .visually-hidden {
+            position: absolute !important;
+            clip: rect(1px,1px,1px,1px);
+            padding: 0 !important;
+            border: 0 !important;
+            height: 1px !important;
+            width: 1px !important;
+            overflow: hidden;
+        }
+
+        [hidden] {
+            display: none;
+        }
+
+        .showOnMobile {
+            display: none;
+        }
+
+        .showOnDesktop {
+            display: flex;
+        }
+
+        /* Skip Link */
+        .header-skip-link {
+            position: absolute;
+            padding: 1em 1.5em;
+            box-sizing: border-box;
+            text-decoration: underline;
+            z-index: 2;
+            max-width: calc(100vw - 2.6em);
+            top: 1.5em;
+            left: -1000em;
+            font-family: var(--header-button-font-font-family);
+            font-style: var(--header-button-font-font-style);
+            font-weight: var(--header-button-font-font-weight);
+            line-height: var(--header-button-font-line-height);
+            letter-spacing: var(--header-button-font-letter-spacing);
+            text-transform: var(--header-button-font-text-transform);
+        }
+
+        .header-skip-link:focus {
+            left: 1.5em;
+            outline-offset: 4px;
+            outline-width: 2px;
+            outline-style: solid;
+            outline-color: var(--navigationLinkColor);
+        }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 767px) {
+            .header-display-desktop {
+                display: none;
+            }
+            
+            .header-display-mobile {
+                display: flex;
+            }
+            
+            .header-burger {
+                display: flex;
+            }
+            
+            .showOnMobile {
+                display: flex;
+            }
+            
+            .showOnDesktop {
+                display: none;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+            
+            .header-actions .header-actions-action--cta {
+                display: none;
+            }
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--siteBackgroundColor);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .mobile-menu-overlay.active {
+            display: flex;
+        }
+
+        .mobile-menu-close {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .mobile-menu-nav a {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--navigationLinkColor);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu-cta {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-announcement-bar-wrapper">
+        <a href="#page" class="header-skip-link sqs-button-element--primary">Aller au contenu</a>
+        
+        <div class="header-border" data-header-style="theme" data-header-border="false" data-test="header-border"></div>
+        <div class="header-dropshadow" data-header-style="theme" data-header-dropshadow="false" data-test="header-dropshadow"></div>
+        
+        <div class="header-inner container--fluid header-mobile-layout-logo-left-nav-right header-layout-nav-right" data-test="header-inner">
+            <div class="header-background theme-bg--primary"></div>
+            
+            <!-- Desktop Header -->
+            <div class="header-display-desktop" data-content-field="site-title">
+                <div class="header-title-nav-wrapper">
+                    <div class="header-title" data-animation-role="header-element">
+                        <div class="header-title-logo">
+                            <a href="/" data-animation-role="header-element">
+                                <img elementtiming="nbf-header-logo-desktop" 
+                                     src="../assets/logo-videos/logo.png" 
+                                     alt="ZG Nettoyage - Services de Nettoyage Professionnels" 
+                                     style="display:block" 
+                                     fetchpriority="high" 
+                                     loading="eager" 
+                                     decoding="async" 
+                                     data-loader="raw">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="header-nav">
+                        <div class="header-nav-wrapper">
+                            <nav class="header-nav-list">
+                                <div class="header-nav-item header-nav-item--collection">
+                                    <a href="services.html" data-animation-role="header-element">Services</a>
+                                </div>
+                                <div class="header-nav-item header-nav-item--collection">
+                                    <a href="about.html" data-animation-role="header-element">À Propos</a>
+                                </div>
+                                <div class="header-nav-item header-nav-item--collection">
+                                    <a href="protfolio.html" data-animation-role="header-element">Portfolio</a>
+                                </div>
+                                <div class="header-nav-item header-nav-item--collection">
+                                    <a href="pricing.html" data-animation-role="header-element">Tarifs</a>
+                                </div>
+                                <div class="header-nav-item header-nav-item--collection">
+                                    <a href="blog.html" data-animation-role="header-element">Blog</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-actions header-actions--right">
+                    <div class="showOnMobile"></div>
+                    <div class="showOnDesktop"></div>
+                    <div class="header-actions-action header-actions-action--cta" data-animation-role="header-element">
+                        <a class="btn btn--border theme-btn--primary-inverse sqs-button-element--primary" href="contact.html">Nous Contacter</a>
+                    </div>
+                </div>
+                
+                <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
+                    <button class="header-burger-btn burger" data-test="header-burger" onclick="toggleMobileMenu()">
+                        <span class="js-header-burger-open-title visually-hidden">Ouvrir le Menu</span>
+                        <span hidden="" class="js-header-burger-close-title visually-hidden">Fermer le Menu</span>
+                        <div class="burger-box">
+                            <div class="burger-inner header-menu-icon-tripleLineHamburger">
+                                <div class="top-bun"></div>
+                                <div class="patty"></div>
+                                <div class="bottom-bun"></div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Header -->
+            <div class="header-display-mobile" data-content-field="site-title">
+                <div class="header-title-nav-wrapper">
+                    <div class="header-title" data-animation-role="header-element">
+                        <div class="header-title-logo">
+                            <a href="/" data-animation-role="header-element">
+                                <img elementtiming="nbf-header-logo-mobile" 
+                                     src="../assets/logo-videos/logo.png" 
+                                     alt="ZG Nettoyage - Services de Nettoyage Professionnels" 
+                                     style="display:block" 
+                                     fetchpriority="high" 
+                                     loading="eager" 
+                                     decoding="async" 
+                                     data-loader="raw">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-actions header-actions--right">
+                    <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
+                        <button class="header-burger-btn burger" data-test="header-burger" onclick="toggleMobileMenu()">
+                            <span class="js-header-burger-open-title visually-hidden">Ouvrir le Menu</span>
+                            <span hidden="" class="js-header-burger-close-title visually-hidden">Fermer le Menu</span>
+                            <div class="burger-box">
+                                <div class="burger-inner header-menu-icon-tripleLineHamburger">
+                                    <div class="top-bun"></div>
+                                    <div class="patty"></div>
+                                    <div class="bottom-bun"></div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <button class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
+        <nav class="mobile-menu-nav">
+            <a href="services.html">Services</a>
+            <a href="about.html">À Propos</a>
+            <a href="protfolio.html">Portfolio</a>
+            <a href="pricing.html">Tarifs</a>
+            <a href="blog.html">Blog</a>
+        </nav>
+        <div class="mobile-menu-cta">
+            <a class="btn sqs-button-element--primary" href="contact.html">Nous Contacter</a>
+        </div>
+    </div>
+
+    </body>
+</html>

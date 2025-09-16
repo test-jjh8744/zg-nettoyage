@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - ZG Nettoyage</title>
+  <link rel="stylesheet" href="style/protfolio.css">
+  <link rel="stylesheet" href="style/footer.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="nav-container"></div>
+  
+  <main class="main-content">
+    <div class="container">
+      <h1>Our Work Portfolio</h1>
+      <p>See the quality of our cleaning services in action.</p>
+      <!-- Add your portfolio content here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <script src="script/nav.js"></script>
+  <script src="script/protfolio.js"></script>
+  <script>
+    // Load footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const footer = doc.querySelector('.footer');
+        document.getElementById('footer-container').appendChild(footer);
+      });
+  </script>
+</body>
+</html>
