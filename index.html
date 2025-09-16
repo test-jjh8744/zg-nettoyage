@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirection…</title>
+  <!-- Instant redirect for most browsers -->
+  <meta http-equiv="refresh" content="0; url=public/src/" />
+  <!-- Canonical target -->
+  <link rel="canonical" href="public/src/" />
+  <script>
+    // JS redirect as primary method (works faster than meta refresh on some browsers)
+    (function() {
+      var target = 'public/src/';
+      try {
+        // Use replace so the back button doesn't return to the redirect page
+        window.location.replace(target);
+      } catch (e) {
+        window.location.href = target;
+      }
+    })();
+  </script>
+  <style>
+    html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .wrap { height: 100%; display: grid; place-items: center; color: #1a1a1a; }
+    a { color: #106194; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p>Redirection vers le site… Si rien ne se passe, <a href="public/src/">cliquez ici</a>.</p>
+  </div>
+</body>
+</html>
