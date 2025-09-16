@@ -898,7 +898,8 @@ min-height: auto !important; /* override content-wrapper min-height */
   }
   
   .content-wrapper {
-    padding: 10vh 4vw 0;
+    padding: 0 4vw;
+    align-items: center;
   }
   
   h1 {
