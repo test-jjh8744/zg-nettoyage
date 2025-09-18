@@ -16,6 +16,8 @@ function toggleMobileMenu() {
 
 // Initialize navigation functionality
 function initNavigation() {
+  // Ensure Résultats points to Before & After (defensive fix)
+  document.querySelectorAll('a[href="pricing.html"]').forEach(a => { a.setAttribute('href','befor&after.html'); });
   // Close mobile menu when clicking on a link
   document.querySelectorAll('.mobile-menu-nav a').forEach(link => {
     link.addEventListener('click', () => {
@@ -97,7 +99,7 @@ function initNavigation() {
 
 // Load navigation function
 function loadNavigation() {
-  fetch('nav.html')
+  fetch(`nav.html?v=${Date.now()}`)
     .then(response => response.text())
     .then(data => {
       document.getElementById('nav-container').innerHTML = data;

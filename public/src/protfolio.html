@@ -1,26 +1,585 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - ZG Nettoyage</title>
+  <title>Portfolio - ZG Nettoyage | Nos Réalisations</title>
   <link rel="stylesheet" href="style/protfolio.css">
   <link rel="stylesheet" href="style/footer.css">
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
 </head>
 <body>
   <!-- Navigation -->
   <div id="nav-container"></div>
-  
-  <main class="main-content">
-    <div class="container">
-      <h1>Our Work Portfolio</h1>
-      <p>See the quality of our cleaning services in action.</p>
-      <!-- Add your portfolio content here -->
+
+  <!-- Moving Contact Info Line -->
+  <div class="moving-contact-line">
+    <div class="contact-ticker">
+      <div class="contact-content">
+        <span class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          +212 7 12 32 63 29
+        </span>
+        <span class="contact-separator">•</span>
+        <span class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          contact@zgnettoyage.ma
+        </span>
+        <span class="contact-separator">•</span>
+        <span class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          +212 7 12 32 63 29
+        </span>
+        <span class="contact-separator">•</span>
+        <span class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          contact@zgnettoyage.ma
+        </span>
+      </div>
     </div>
-  </main>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="portfolio-hero-section">
+    <div class="hero-background">
+      <img src="../assets/hero_services.png" alt="Portfolio ZG Nettoyage" class="hero-bg-image">
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="hero-content-container">
+          <div class="hero-text-content animate-on-scroll">
+            <div class="hero-text-wrapper">
+              <p class="sqsrte-large">Découvrez nos</p>
+              <h1>Réalisations Exceptionnelles</h1>
+              <h3>Une galerie de nos meilleurs projets de nettoyage professionnel au Maroc.</h3>
+              <div class="hero-button-container">
+                <a href="contact.html" class="sqs-button-element--secondary sqs-block-button-element--large">
+                  Demander un Devis
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Stats Section -->
+  <div class="content-wrapper portfolio-stats-section animate-on-scroll">
+    <div class="content">
+      <div class="stats-container">
+        <div class="stat-item bounce-in animate-delay-1">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Projets Réalisés</div>
+        </div>
+        <div class="stat-item bounce-in animate-delay-2">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Années d'Expérience</div>
+        </div>
+        <div class="stat-item bounce-in animate-delay-3">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Satisfaction Client</div>
+        </div>
+        <div class="stat-item bounce-in animate-delay-4">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Service Disponible</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Categories Filter -->
+  <div class="content-wrapper portfolio-filter-section">
+    <div class="content">
+      <div class="filter-container animate-on-scroll">
+        <h2>Explorez Nos Réalisations</h2>
+        <p class="filter-subtitle">Filtrez par type de service pour voir nos meilleurs travaux</p>
+        
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="residential">Résidentiel</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn" data-filter="office">Bureau</button>
+          <button class="filter-btn" data-filter="deep-cleaning">Nettoyage Profond</button>
+          <button class="filter-btn" data-filter="windows">Vitres</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Gallery -->
+  <div class="content-wrapper portfolio-gallery-section">
+    <div class="content">
+      <div class="portfolio-grid">
+        
+        <!-- Portfolio Item 1 -->
+        <div class="portfolio-item scale-in animate-delay-1" data-category="residential">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Nettoyage résidentiel - Villa moderne" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Villa Moderne - Casablanca</h3>
+                  <p>Nettoyage complet d'une villa de 300m²</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Résidentiel</span>
+                    <span class="tag">Nettoyage Complet</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('villa-moderne')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="portfolio-item scale-in animate-delay-2" data-category="commercial">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Nettoyage commercial - Centre commercial" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Centre Commercial - Rabat</h3>
+                  <p>Nettoyage quotidien d'un centre commercial</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Commercial</span>
+                    <span class="tag">Maintenance</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('centre-commercial')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="portfolio-item scale-in animate-delay-3" data-category="office">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop" alt="Nettoyage bureau - Espace de travail moderne" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Bureau Moderne - Casablanca</h3>
+                  <p>Nettoyage d'espaces de travail collaboratifs</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Bureau</span>
+                    <span class="tag">Espaces Collaboratifs</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('bureau-moderne')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="portfolio-item scale-in animate-delay-4" data-category="deep-cleaning">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" alt="Nettoyage profond - Cuisine professionnelle" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Restaurant - Mohammedia</h3>
+                  <p>Nettoyage profond de cuisine professionnelle</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Nettoyage Profond</span>
+                    <span class="tag">Cuisine</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('restaurant-cuisine')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="portfolio-item scale-in animate-delay-5" data-category="windows">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop" alt="Nettoyage vitres - Immeuble de bureaux" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Tour de Bureaux - Casablanca</h3>
+                  <p>Nettoyage de vitres en hauteur</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Vitres</span>
+                    <span class="tag">Hauteur</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('tour-bureaux')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 6 -->
+        <div class="portfolio-item scale-in animate-delay-6" data-category="residential">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" alt="Nettoyage résidentiel - Appartement luxueux" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Appartement de Luxe - Rabat</h3>
+                  <p>Nettoyage hebdomadaire d'un penthouse</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Résidentiel</span>
+                    <span class="tag">Luxe</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('appartement-luxe')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 7 -->
+        <div class="portfolio-item scale-in animate-delay-1" data-category="commercial">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" alt="Nettoyage commercial - Hôtel" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Hôtel 5 Étoiles - Marrakech</h3>
+                  <p>Nettoyage quotidien d'un hôtel de luxe</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Commercial</span>
+                    <span class="tag">Hôtellerie</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('hotel-luxe')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 8 -->
+        <div class="portfolio-item scale-in animate-delay-2" data-category="office">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop" alt="Nettoyage bureau - Open space" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Siège Social - Casablanca</h3>
+                  <p>Nettoyage d'open space de 1000m²</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Bureau</span>
+                    <span class="tag">Open Space</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('siege-social')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 9 -->
+        <div class="portfolio-item scale-in animate-delay-3" data-category="deep-cleaning">
+          <div class="portfolio-card">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" alt="Nettoyage profond - Salle de bain" loading="lazy">
+              <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                  <h3>Spa de Luxe - Agadir</h3>
+                  <p>Nettoyage et désinfection complète</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Nettoyage Profond</span>
+                    <span class="tag">Spa</span>
+                  </div>
+                </div>
+                <button class="view-details-btn" onclick="openPortfolioModal('spa-luxe')">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Load More Button -->
+      <div class="load-more-container animate-on-scroll">
+        <button class="load-more-btn" onclick="loadMorePortfolio()">
+          Voir Plus de Réalisations
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <section class="portfolio-testimonials-section">
+    <div class="testimonials-background">
+      <div class="testimonials-overlay"></div>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="testimonials-container animate-on-scroll">
+          <h2>Ce Que Disent Nos Clients</h2>
+          <p class="testimonials-subtitle">Des témoignages authentiques de nos clients satisfaits</p>
+          
+          <div class="testimonials-grid">
+            <div class="testimonial-card slide-in-left animate-delay-1">
+              <div class="testimonial-content">
+                <div class="stars">
+                  <span>★★★★★</span>
+                </div>
+                <p>"ZG Nettoyage a transformé notre bureau. L'équipe est professionnelle, ponctuelle et le résultat est toujours impeccable. Je recommande vivement leurs services."</p>
+                <div class="testimonial-author">
+                  <div class="author-info">
+                    <h4>Ahmed Benali</h4>
+                    <span>Directeur, Société ATLAS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card slide-in-right animate-delay-2">
+              <div class="testimonial-content">
+                <div class="stars">
+                  <span>★★★★★</span>
+                </div>
+                <p>"Service exceptionnel ! Ils ont nettoyé notre villa après des travaux de rénovation. Le résultat était parfait, comme si nous venions d'emménager."</p>
+                <div class="testimonial-author">
+                  <div class="author-info">
+                    <h4>Hassan Alaoui</h4>
+                    <span>Propriétaire, Villa Anfa</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card slide-in-left animate-delay-3">
+              <div class="testimonial-content">
+                <div class="stars">
+                  <span>★★★★★</span>
+                </div>
+                <p>"Nous faisons appel à ZG Nettoyage depuis 3 ans pour notre hôtel. Leur professionnalisme et leur attention aux détails sont remarquables."</p>
+                <div class="testimonial-author">
+                  <div class="author-info">
+                    <h4>Youssef Tazi</h4>
+                    <span>Manager, Hôtel Casablanca</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="portfolio-cta-section" id="cta-portfolio">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="brand-cta animate-on-scroll">
+          <div class="brand-cta__left">
+            <div class="brand-cta__eyebrow">ZG Nettoyage • Partenaire de confiance</div>
+            <h2 class="brand-cta__title">Prêt à transformer votre espace ?</h2>
+            <p class="brand-cta__desc">Du résidentiel au commercial, notre équipe certifiée s’occupe de tout. Intervention rapide, résultat impeccable, devis gratuit et transparent.</p>
+            <ul class="brand-cta__bullets">
+              <li>Intervention 24/7 partout au Maroc</li>
+              <li>Équipe formée, assurée et équipée</li>
+              <li>+500 projets livrés avec 100% de satisfaction</li>
+            </ul>
+            <div class="brand-cta__actions">
+              <a href="contact.html" class="btn btn--primary">
+                Obtenir un devis gratuit
+              </a>
+              <a href="https://wa.me/212712326329?text=Bonjour%20ZG%20Nettoyage%2C%20je%20souhaite%20un%20devis%20gratuit." class="btn btn--whatsapp" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20.52 3.48A11.77 11.77 0 0012.03 0C5.73 0 .63 5.1.63 11.4c0 2 .54 3.9 1.56 5.6L0 24l7.18-2.1a11.7 11.7 0 004.85 1.1h.02c6.3 0 11.4-5.1 11.4-11.4 0-3.05-1.2-5.92-3.33-8.12zm-8.49 18.3h-.02a9.77 9.77 0 01-4.98-1.36l-.36-.21-4.26 1.24 1.22-4.15-.24-.38A9.77 9.77 0 012.6 11.4C2.6 6.22 6.86 2 12.03 2c2.57 0 4.99 1 6.81 2.82A9.6 9.6 0 0121.4 11.4c0 5.17-4.26 9.38-9.37 9.38zm5.3-7.02c-.3-.15-1.77-.87-2.04-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.66.07-.3-.15-1.26-.46-2.4-1.46-.89-.79-1.49-1.77-1.66-2.06-.17-.3 0-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.6-.5-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.1 3.2 5.07 4.5.71.31 1.26.49 1.7.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.57-.35z" fill="currentColor"/>
+                </svg>
+                Parler sur WhatsApp
+              </a>
+              <a href="tel:+212712326329" class="cta-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                +212 7 12 32 63 29
+              </a>
+            </div>
+            <div class="brand-cta__proof">
+              <span class="rating">★★★★★</span>
+              <span class="note">4.9/5 sur 120+ avis</span>
+            </div>
+          </div>
+          <div class="brand-cta__right">
+            <div class="info-cards">
+              <div class="info-card">
+                <div class="icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2l7 4v6c0 5-3 9-7 10-4-1-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="text">
+                  <h4>Garantie satisfaction</h4>
+                  <p>Nous revenons si nécessaire, sans frais.</p>
+                </div>
+              </div>
+              <div class="info-card">
+                <div class="icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="text">
+                  <h4>Intervention rapide</h4>
+                  <p>Disponibles 24/7 selon vos urgences.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Modal -->
+  <div class="portfolio-modal" id="portfolioModal">
+    <div class="modal-overlay" onclick="closePortfolioModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closePortfolioModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      
+      <div class="modal-body" id="modalBody">
+        <!-- Content will be dynamically loaded -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Quote Icon -->
+  <div id="floating-quote-icon" class="floating-quote-icon">
+    <div class="icon-content">
+      <dotlottie-wc src="https://lottie.host/7abf837b-dc91-4433-a561-326e276f3135/hpK8uOsfiC.lottie" style="width: 50px; height: 50px;" speed="1" autoplay loop></dotlottie-wc>
+      <span>Devis</span>
+    </div>
+  </div>
+
+  <!-- Floating Form Modal -->
+  <div id="floating-form-modal" class="floating-form-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Demandez votre devis gratuit</h2>
+        <button id="close-modal" class="close-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      
+      <form class="floating-form" id="floatingQuoteForm">
+        <div class="form-group">
+          <label for="floatingClientName">Nom complet *</label>
+          <input type="text" id="floatingClientName" name="clientName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="floatingClientPhone">Numéro de téléphone *</label>
+          <input type="tel" id="floatingClientPhone" name="clientPhone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="floatingClientAddress">Adresse *</label>
+          <input type="text" id="floatingClientAddress" name="clientAddress" required>
+        </div>
+
+        <div class="form-group">
+          <label for="floatingServiceType">Type de service *</label>
+          <select id="floatingServiceType" name="serviceType" required>
+            <option value="">Sélectionnez un service</option>
+            <option value="nettoyage-bureau">Nettoyage bureau</option>
+            <option value="femme-menage">Femme de ménage</option>
+            <option value="nettoyage-fin-chantier">Nettoyage fin de chantier</option>
+            <option value="nettoyage-vitres">Nettoyage des vitres</option>
+            <option value="cristallisation-marbre">Cristallisation du marbre</option>
+            <option value="nettoyage-moquette">Nettoyage de la moquette</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="floatingMessage">Message</label>
+          <textarea id="floatingMessage" name="message" rows="3" placeholder="Décrivez vos besoins spécifiques..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Obtenir mon devis gratuit
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <div id="footer-container"></div>
+
+  <!-- WhatsApp Floating Icon -->
+  <div id="whatsapp-container"></div>
 
   <script src="script/nav.js"></script>
   <script src="script/protfolio.js"></script>
@@ -33,6 +592,13 @@
         const doc = parser.parseFromString(data, 'text/html');
         const footer = doc.querySelector('.footer');
         document.getElementById('footer-container').appendChild(footer);
+      });
+
+    // Load WhatsApp floating icon
+    fetch('shared_wats_icon.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('whatsapp-container').innerHTML = data;
       });
   </script>
 </body>

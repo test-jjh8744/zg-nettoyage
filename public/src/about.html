@@ -1,29 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - ZG Nettoyage</title>
+  <title>À Propos - ZG Nettoyage</title>
   <link rel="stylesheet" href="style/about.css">
   <link rel="stylesheet" href="style/footer.css">
+  <link rel="stylesheet" href="style/animations.css">
+   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+ <style>
+    /* About page hero styles (scoped) */
+    @font-face {
+      font-family: 'Albra';
+      src: url(https://static1.squarespace.com/static/618712634cc9d14bd80427f3/t/618726ad2ae7d330b43cb5f8/1636247213169/BumbumType+-+Albra+Light.otf);
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Albra-Italic';
+      src: url(https://static1.squarespace.com/static/618712634cc9d14bd80427f3/t/618726b6bf654a24c669edb5/1636247222114/BumbumType+-+Albra+Light+Italic.otf);
+      font-display: swap;
+    }
+
+    .about-hero {
+      padding: 6vmax 0;
+      background: var(--siteBackgroundColor);
+    }
+    .about-hero__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 7vw;
+      padding-right: 7vw;
+      box-sizing: content-box;
+    }
+    .about-hero__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .about-hero__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .about-hero__title {
+      white-space: pre-wrap;
+      margin: 1rem 0;
+      color: var(--headingExtraLargeColor);
+      font-family: 'Albra', var(--heading-font-font-family);
+      line-height: 3.3rem !important;
+    }
+    @media screen and (min-width: 1296px) {
+      .about-hero__title { font-size: calc(var(--heading-1-size-value) * 1rem); }
+    }
+    @media screen and (min-width: 768px), screen and (max-width: calc(1295px)) and (orientation: landscape) {
+      .about-hero__title { font-size: calc((var(--heading-1-size-value) - 1) * 1.2vw + 1rem); }
+    }
+
+    .about-hero__subtitle {
+      white-space: pre-wrap;
+      margin: 1rem 0;
+      color: var(--headingMediumColor);
+      font-family: 'Albra-Italic', var(--heading-font-font-family);
+      line-height: 2.5rem !important;
+    }
+    @media screen and (min-width: 1296px) {
+      .about-hero__subtitle { font-size: calc(var(--heading-3-size-value) * 1rem); }
+    }
+    @media screen and (min-width: 768px), screen and (max-width: calc(1295px)) and (orientation: landscape) {
+      .about-hero__subtitle { font-size: calc((var(--heading-3-size-value) - 1) * 1.2vw + 1rem); }
+    }
+
+    .about-hero__cta {
+      display: inline-block;
+      background-color: transparent !important;
+      color: #000 !important;
+      border: 1px solid #000 !important;
+      border-radius: 5px !important;
+      padding: .9em 3em !important;
+      -webkit-font-smoothing: antialiased;
+      transition: 0.1s opacity linear;
+    }
+    .about-hero__cta:hover { opacity: 0.8; }
+
+    .about-hero__image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+    .about-hero__image-wrap img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+    .about-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background-color: var(--image-block-poster-image-overlay-color, rgba(0,0,0,.5));
+      opacity: .1;
+      pointer-events: none;
+      border-radius: 14px;
+    }
+
+    /* Full-width sections with no corner spacing */
+    .full-width-section {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
   <div id="nav-container"></div>
   
   <main class="main-content">
-    <div class="container">
-      <h1>About ZG Nettoyage</h1>
-      <p>Professional cleaning services you can trust.</p>
-      <!-- Add your about content here -->
-    </div>
-  </main>
+    <section class="about-hero" data-section-id="6189398e9e606371c1c00ebc">
+      <div class="about-hero__container">
+        <div class="about-hero__grid">
+          <div class="about-hero__col about-hero__col--text">
+            <h1 class="about-hero__title">Dites-nous ce dont vous avez besoin.<br>Nous nous occupons du reste.</h1>
+            <h3 class="about-hero__subtitle">Nous offrons une gamme de services de nettoyage impeccables à Casablanca et dans les environs, avec une équipe solide de personnel hautement qualifié.</h3>
+            <h3 class="about-hero__subtitle">Nous sommes une entreprise de nettoyage soucieuse de l'environnement au service des entreprises et des foyers de Casablanca.</h3>
+            <a href="contact.html" class="about-hero__cta">obtenir un devis</a>
+          </div>
+          <div class="about-hero__col about-hero__col--image">
+            <div class="about-hero__image-wrap">
+              <img src="https://images.squarespace-cdn.com/content/v1/618712634cc9d14bd80427f3/d5837714-782c-46cb-8c31-1c19d1b613b3/cleaning+team.jpg" alt="Équipe de nettoyage donnant un nettoyage en profondeur dans une maison de Casablanca" loading="lazy" decoding="async">
+              <div class="about-hero__overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guarantee section (full-width, dark blue background) -->
+    <section class="full-width-section" style="background-color: #0d2c44; color: #ffffff; padding: 6rem 0;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 7vw; text-align: center;">
+        <h2 style="font-family: 'Albra-Italic', serif; font-weight: 400; font-size: 2.8rem; margin: 0 0 2rem; font-style: italic; color: #ffffff;">Nous garantissons notre travail.</h2>
+        <p style="max-width: 900px; margin: 0 auto 1.5rem; line-height: 1.8; font-size: 1.1rem; color: #ffffff;">
+          ZG Nettoyage est une organisation fiable avec une excellente réputation et des références. Nos tarifs sont raisonnables et abordables. Nous voulons nous assurer que vos attentes ne sont pas seulement satisfaites, mais dépassées.
+        </p>
+        <p style="max-width: 900px; margin: 0 auto 2.5rem; line-height: 1.8; font-size: 1.1rem; color: #ffffff;">
+          Si vous n'êtes pas satisfait de notre travail, nous le corrigerons et le ferons bien. Nous sommes soucieux du détail, efficaces, et nous essayons d'atteindre chaque recoin - mais si nous manquons quelque chose, nous reviendrons volontiers pour nous en occuper. Clients heureux = ZG Nettoyage heureux.
+        </p>
+        <a href="services.html" style="display: inline-block; border: 1px solid #2099d7; color: #ffffff; background: transparent; border-radius: 6px; padding: 0.9em 3em; text-decoration: none; transition: 0.1s opacity linear; font-weight: 500;">en savoir plus sur nos services</a>
+      </div>
+    </section>
+
+    <!-- Pets section (full-width background image) -->
+    <section class="full-width-section" style="background-image: url('../assets/about_the_secouned_hero.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; padding: 6rem 0;">
+      <div style="max-width: 900px; margin: 0 auto; padding: 3rem 7vw; text-align: center; background-color: rgba(255, 255, 255, 0.15); border-radius: 12px; backdrop-filter: blur(2px);">
+        <h2 style="font-family: 'Albra', serif; font-weight: 400; font-size: 2.8rem; margin: 0 0 2rem; color: #000000;">Ne vous inquiétez pas pour vos amis à fourrure.</h2>
+        <p style="max-width: 760px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; color: #000000;">
+          Chez ZG Nettoyage, nous nous soucions de vos animaux de compagnie et comprenons leur valeur en tant que membres de votre famille. Nous nous assurons que tous nos agents de nettoyage sont à l'aise avec les animaux domestiques. Nous suivrons volontiers toutes les instructions que vous nous donnerez concernant les interactions avec vos compagnons bien-aimés.
+        </p>
+      </div>
+    </section>
+
+    <!-- Meet our owner section -->
+    <section style="background-color: #e2f1fc; padding: 6rem 0;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 7vw; text-align: center;">
+        <div style="max-width: 600px; margin: 0 auto 3rem; border-radius: 20px; overflow: hidden; border: 3px solid #2099d7;">
+          <img src="../assets/about_hero_card_1.png" alt="Rencontrez notre propriétaire, Defne" style="width: 100%; height: auto; display: block;">
+        </div>
+        <h2 style="font-family: 'Albra-Italic', serif; font-weight: 400; font-size: 2.8rem; margin: 0 0 1.5rem; color: #2c2c2c; font-style: italic;">Rencontrez notre propriétaire, Defne.</h2>
+        <p style="max-width: 900px; margin: 0 auto 2rem; line-height: 1.8; font-size: 1.2rem; color: #2c2c2c; font-weight: 500;">
+          Defne est un visage familier à Casablanca.
+        </p>
+        <p style="max-width: 900px; margin: 0 auto 1.5rem; line-height: 1.8; font-size: 1.1rem; color: #2c2c2c;">
+          D'origine turque, Defne a travaillé dans plusieurs postes de direction dans de nombreux hôtels et restaurants de luxe aux États-Unis - plus récemment, en tant que directrice résidente du Clifton Inn à Charlottesville. Avant cela, elle a travaillé avec Boar's Head Inn, un établissement quatre diamants également situé à Charlottesville, où elle supervisait le restaurant principal, le bar et le service en chambre. À l'international, Defne possède également une vaste expérience avec de grands établissements à l'étranger.
+        </p>
+        <p style="max-width: 900px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; color: #2c2c2c;">
+          Les forces de Defne incluent une attitude joyeuse et travailleuse, et des années d'expérience dans les hôtels et restaurants de luxe. Elle a une attention particulière aux détails et apporte un service de qualité supérieure et des connaissances à ZG Nettoyage.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation links section (light blue background with underlines) -->
+    <section class="full-width-section" style="background-color: #87ccf2; padding: 3.5rem 0;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 7vw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; text-align: center; align-items: center;">
+        <a href="services.html" style="color: #2c2c2c; text-decoration: none; font-size: 1.125rem; font-weight: 500; display: inline-block;">
+          <span style="display: inline-block; padding-bottom: 8px; border-bottom: 2px solid #2c2c2c;">Explorez nos services →</span>
+        </a>
+        <a href="blog.html" style="color: #2c2c2c; text-decoration: none; font-size: 1.125rem; font-weight: 500; display: inline-block;">
+          <span style="display: inline-block; padding-bottom: 8px; border-bottom: 2px solid #2c2c2c;">Lisez nos avis →</span>
+        </a>
+        <a href="contact.html" style="color: #2c2c2c; text-decoration: none; font-size: 1.125rem; font-weight: 500; display: inline-block;">
+          <span style="display: inline-block; padding-bottom: 8px; border-bottom: 2px solid #2c2c2c;">Obtenez un devis →</span>
+        </a>
+      </div>
+    </section>
+
+      </main>
 
   <!-- Footer -->
   <div id="footer-container"></div>
 
+  <!-- WhatsApp Floating Icon -->
+  <div id="whatsapp-container"></div>
+
   <script src="script/nav.js"></script>
   <script src="script/about.js"></script>
+  <script src="script/animations.js"></script>
   <script>
     // Load footer
     fetch('footer.html')
@@ -33,6 +216,13 @@
         const doc = parser.parseFromString(data, 'text/html');
         const footer = doc.querySelector('.footer');
         document.getElementById('footer-container').appendChild(footer);
+      });
+
+    // Load WhatsApp floating icon
+    fetch('shared_wats_icon.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('whatsapp-container').innerHTML = data;
       });
   </script>
 </body>

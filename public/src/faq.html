@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - ZG Nettoyage</title>
+  <link rel="stylesheet" href="style/faq.css">
+  <link rel="stylesheet" href="style/footer.css">
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+  <style>
+    @font-face {
+      font-family: 'Albra';
+      src: url(https://static1.squarespace.com/static/618712634cc9d14bd80427f3/t/618726ad2ae7d330b43cb5f8/1636247213169/BumbumType+-+Albra+Light.otf);
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Albra-Italic';
+      src: url(https://static1.squarespace.com/static/618712634cc9d14bd80427f3/t/618726b6bf654a24c669edb5/1636247222114/BumbumType+-+Albra+Light+Italic.otf);
+      font-display: swap;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Work Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f8f8;
+    }
+
+    .main-content {
+      padding: 100px 20px 50px;
+      min-height: 70vh;
+    }
+
+    .faq-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .faq-image {
+      position: sticky;
+      top: 120px;
+    }
+
+    .faq-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 3px solid #2099d7;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .faq-content {
+      padding: 2rem 0;
+    }
+
+    .faq-title {
+      font-family: 'Albra-Italic', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #2c2c2c;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #2099d7;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .faq-item {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 1.5rem;
+    }
+
+    .faq-question {
+      font-family: 'Albra-Italic', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #2c2c2c;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .faq-answer p {
+      margin-bottom: 1rem;
+    }
+
+    .faq-answer strong {
+      font-weight: 600;
+      color: #2c2c2c;
+    }
+
+    .still-questions {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 3rem 0;
+    }
+
+    .still-questions h3 {
+      font-family: 'Albra-Italic', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: #2c2c2c;
+      margin-bottom: 2rem;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background-color: transparent;
+      color: #2c2c2c;
+      border: 1px solid #2099d7;
+      border-radius: 5px;
+      padding: 0.9em 3em;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.1s opacity linear;
+    }
+
+    .contact-btn:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .faq-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .faq-image {
+        position: static;
+      }
+      
+      .faq-title {
+        font-size: 2rem;
+      }
+      
+      .faq-question {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="nav-container"></div>
+  
+  <main class="main-content">
+    <div class="faq-container">
+      <div class="faq-image">
+        <img src="../assets/faq.png" alt="ZG Nettoyage professional cleaning service">
+      </div>
+      
+      <div class="faq-content">
+        <h1 class="faq-title">Questions fréquemment posées</h1>
+        
+        <div class="faq-item">
+          <h3 class="faq-question">Jusqu'où voyagez-vous ?</h3>
+          <div class="faq-answer">
+            <p>Comme notre siège social se trouve à Casablanca, nous sommes heureux de nous déplacer partout où vous en avez besoin dans un rayon de 30 kilomètres de notre emplacement. Les zones que nous desservons incluent Ain Chock, Hay Hassani, Sidi Bernoussi, Mohammedia et Bouskoura.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Les mêmes personnes viennent-elles à chaque fois ?</h3>
+          <div class="faq-answer">
+            <p>Nous essayons d'envoyer la même équipe à chaque fois, bien que nous ne puissions pas le garantir. Nous savons à quel point il est important d'avoir cette sensation de chaleur et de flou à chaque fois que vous voyez les mêmes visages. Parfois, nous devons jongler un peu, mais nous ferons toujours de notre mieux pour maintenir la cohérence de votre équipe.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps faut-il pour obtenir un devis ?</h3>
+          <div class="faq-answer">
+            <p>Nous n'aimons pas faire attendre qui que ce soit. Notre politique est de vous recontacter dans les 24 heures ou moins.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Êtes-vous un service respectueux des animaux de compagnie ?</h3>
+          <div class="faq-answer">
+            <p>Oui ! Nous aimons vos amis à fourrure. Nous travaillerons autour d'eux.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Dois-je être à la maison pendant le nettoyage ?</h3>
+          <div class="faq-answer">
+            <p>Tout ce qui est le plus confortable pour vous ! Si vous souhaitez être à la maison, c'est parfait pour nous. Si vous avez des courses à faire, ou si vous êtes absent, cela fonctionne aussi pour nous.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Quelle est la différence entre un nettoyage standard et le nettoyage de déménagement ?</h3>
+          <div class="faq-answer">
+            <p><strong>Services de nettoyage de déménagement</strong></p>
+            <p>Que vous déménagiez d'une maison et que vous deviez faire nettoyer la maison pour votre propriétaire, ou si vous emménagez dans une maison et que vous voulez vous assurer qu'elle est au top avant d'apporter vos affaires, un nettoyage de déménagement est organisé en trois sections.</p>
+            
+            <p><strong>Salles de bains.</strong> Le nettoyage de vos salles de bains comprend un nettoyage approfondi de l'évier, de la baignoire et de la douche, des luminaires chromés brillants, des toilettes nettoyées, du dessus du réservoir nettoyé, des miroirs nettoyés, des interrupteurs et prises nettoyés, des sols aspirés et serpillés, et des poubelles vidées.</p>
+            
+            <p><strong>Cuisine.</strong> Le nettoyage de votre cuisine comprend tous les appareils nettoyés (four, réfrigérateur, cuisinière, lave-vaisselle, micro-ondes), armoires et tiroirs nettoyés à l'intérieur et à l'extérieur, portes essuyées, stores nettoyés, rebords de fenêtres nettoyés, sols aspirés et serpillés, poubelles vidées, interrupteurs et prises nettoyés, plinthes essuyées.</p>
+            
+            <p><strong>Chambres et espaces de vie.</strong> Lorsque nous nettoyons les chambres et les espaces de vie, nous nous assurons que toute la poussière est enlevée, les miroirs nettoyés, les rebords de fenêtres essuyés, les stores nettoyés, les ventilateurs de plafond nettoyés, les interrupteurs et prises nettoyés, les plinthes enlevées, les étagères essuyées, la laveuse et la sécheuse nettoyées à l'intérieur et à l'extérieur, et les sols aspirés et serpillés.</p>
+            
+            <p>Téléchargez notre liste de nettoyage de déménagement ici.</p>
+            
+            <p><strong>Services de nettoyage standard</strong></p>
+            <p>Un nettoyage standard serait pour votre maison dans laquelle vous vivez et le service serait personnalisable selon vos besoins. Notre liste de nettoyage standard est organisée dans les mêmes trois sections énumérées dans le nettoyage de déménagement ci-dessus avec des services de nettoyage supplémentaires disponibles, sous réserve de disponibilité.</p>
+            
+            <p><strong>Services supplémentaires.</strong> Lits faits, linge plié, fenêtres nettoyées à l'intérieur, réfrigérateur nettoyé à l'intérieur, four nettoyé à l'intérieur, portes essuyées (y compris les placards), et armoires de cuisine essuyées (extérieur).</p>
+            
+            <p>Téléchargez notre liste de nettoyage standard ici.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Apportez-vous vos propres fournitures ?</h3>
+          <div class="faq-answer">
+            <p>Définitivement, nous apportons tous les produits de nettoyage, chiffons de nettoyage, serpillière, aspirateur, balai, et notre spray énergétique ! Si vous avez des produits spécifiques que vous aimeriez que nous utilisions ou que nous n'utilisions pas, faites-le nous savoir et nous pouvons certainement nous adapter.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Comment fonctionne le paiement et quelles formes de paiement acceptez-vous ?</h3>
+          <div class="faq-answer">
+            <p>Nous vous enverrons une facture par e-mail après votre service et vous pourrez payer en ligne avec une carte de crédit, PayPal, chèque.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Y a-t-il une politique d'annulation ?</h3>
+          <div class="faq-answer">
+            <p>Nous demandons que vous nous donniez un préavis d'au moins 24 heures si vous devez annuler ou reprogrammer. Si nous ne recevons pas d'avis dans ce délai, il y aura des frais d'annulation de 75 MAD.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Combien de temps faut-il pour nettoyer ?</h3>
+          <div class="faq-answer">
+            <p>Cela varie pour chaque maison/entreprise. Les facteurs comme la superficie en mètres carrés, le nombre de pièces, les salles de bains, l'état de l'espace détermineront le temps passé.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Êtes-vous cautionnés et assurés ?</h3>
+          <div class="faq-answer">
+            <p>Oui, nous le sommes !</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">Comment fonctionne le pourboire ?</h3>
+          <div class="faq-answer">
+            <p>Les pourboires ne sont pas obligatoires mais grandement appréciés. Si vous souhaitez donner un pourboire à votre équipe de nettoyage, vous pouvez le faire au moment du service ou l'ajouter à votre paiement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="still-questions">
+      <h3>Vous avez encore des questions ?</h3>
+      <a href="contact.html" class="contact-btn">contactez-nous !</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- WhatsApp Floating Icon -->
+  <div id="whatsapp-container"></div>
+
+  <script src="script/nav.js"></script>
+  <script>
+    // Load footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const footer = doc.querySelector('.footer');
+        document.getElementById('footer-container').appendChild(footer);
+      });
+
+    // Load WhatsApp floating icon
+    fetch('shared_wats_icon.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('whatsapp-container').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

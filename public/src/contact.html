@@ -1,29 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - ZG Nettoyage</title>
+  <title>Contact - ZG Nettoyage</title>
+  <meta name="description" content="Contactez ZG Nettoyage pour un devis gratuit. Services de nettoyage résidentiel et commercial à Casablanca et dans ses environs.">
   <link rel="stylesheet" href="style/contact.css">
   <link rel="stylesheet" href="style/footer.css">
+  <link rel="stylesheet" href="style/animations.css">
 </head>
 <body>
   <!-- Navigation -->
   <div id="nav-container"></div>
-  
-  <main class="main-content">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p>Get in touch for a free quote or to schedule your cleaning service.</p>
-      <!-- Add your contact form and information here -->
-    </div>
+
+  <main id="page" class="contact-page">
+    <!-- Hero/Header -->
+    <section class="contact-hero">
+      <div class="contact-hero__container">
+        <h1 class="contact-hero__title">Dites-nous ce dont vous avez besoin.<br>Nous nous occupons du reste.</h1>
+        <h3 class="contact-hero__subtitle">Obtenez un devis gratuit pour vos besoins en nettoyage à Casablanca et ses environs.</h3>
+      </div>
+    </section>
+
+    <!-- Contact content: info + form -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <!-- Left: Info card -->
+        <aside class="contact-info-card animate-on-scroll">
+          <div class="contact-info-card__inner">
+            <h2 class="contact-info__title">Informations de contact</h2>
+            <ul class="contact-info__list">
+              <li>
+                <div class="ci-label">Adresse</div>
+                <div class="ci-value">10 Rue Zayd Ibnou Rifai, Étage 3 Droite, Maarif, Casablanca</div>
+              </li>
+              <li>
+                <div class="ci-label">Téléphone</div>
+                <div class="ci-value"><a href="tel:+212712326329">+212 7 12 32 63 29</a></div>
+              </li>
+              <li>
+                <div class="ci-label">Email</div>
+                <div class="ci-value"><a href="mailto:contact@zgnettoyage.ma">contact@zgnettoyage.ma</a></div>
+              </li>
+              <li>
+                <div class="ci-label">Horaires</div>
+                <div class="ci-value">Lun - Sam: 8:00 - 20:00</div>
+              </li>
+            </ul>
+            <div class="contact-info__cta">
+              <a href="tel:+212712326329" class="btn-call">Appeler maintenant</a>
+              <a href="#contact-form" class="btn-quote">Obtenir un devis</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right: Form (reusing floating form design) -->
+        <div class="contact-form-card animate-on-scroll" id="contact-form">
+          <div class="contact-form-card__inner">
+            <h2 class="form-title">Demandez votre devis gratuit</h2>
+            <!-- Reused "floating form" markup/classes from the icon modal -->
+            <form class="floating-form" id="contactQuoteForm">
+              <div class="form-group">
+                <label for="floatingClientName">Nom complet *</label>
+                <input type="text" id="floatingClientName" name="clientName" required>
+              </div>
+
+              <div class="form-group">
+                <label for="floatingClientPhone">Numéro de téléphone *</label>
+                <input type="tel" id="floatingClientPhone" name="clientPhone" required>
+              </div>
+
+              <div class="form-group">
+                <label for="floatingClientAddress">Adresse *</label>
+                <input type="text" id="floatingClientAddress" name="clientAddress" required>
+              </div>
+
+              <div class="form-group">
+                <label for="floatingServiceType">Type de service *</label>
+                <select id="floatingServiceType" name="serviceType" required>
+                  <option value="">Sélectionnez un service</option>
+                  <option value="nettoyage-bureau">Nettoyage bureau</option>
+                  <option value="femme-menage">Femme de ménage</option>
+                  <option value="nettoyage-fin-chantier">Nettoyage fin de chantier</option>
+                  <option value="nettoyage-vitres">Nettoyage des vitres</option>
+                  <option value="cristallisation-marbre">Cristallisation du marbre</option>
+                  <option value="nettoyage-moquette">Nettoyage de la moquette</option>
+                  <option value="gardiennage">Gardiennage</option>
+                  <option value="jardinage">Jardinage</option>
+                  <option value="deratisation">Dératisation</option>
+                  <option value="desinsectisation">Désinsectisation</option>
+                  <option value="solution-anti-pigeons">Solution anti pigeons</option>
+                  <option value="traitement-anti-cafard">Traitement anti cafard</option>
+                  <option value="traitement-anti-acarien">Traitement anti acarien</option>
+                  <option value="traitement-sol">Traitement de sol</option>
+                  <option value="climatisation">Climatisation</option>
+                  <option value="filet-protection-chat">Filet protection de chat</option>
+                  <option value="traitement-souris">Traitement souris</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="floatingMessage">Message</label>
+                <textarea id="floatingMessage" name="message" rows="4" placeholder="Décrivez vos besoins spécifiques..."></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Obtenir mon devis gratuit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map section -->
+    <section class="contact-map-section">
+      <div class="contact-map__container">
+        <div class="contact-map__card animate-on-scroll">
+          <h2 class="contact-map__title">Nous rendre visite</h2>
+          <div class="contact-map__embed">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.123456789!2d-7.6177!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM0JzIzLjIiTiA3wrAzNycwMy43Ilc!5e0!3m2!1sfr!2sma!4v1234567890123!5m2!1sfr!2sma"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <div id="footer-container"></div>
 
+  <!-- WhatsApp Floating Icon -->
+  <div id="whatsapp-container"></div>
+
   <script src="script/nav.js"></script>
-  <script src="script/contact.js"></script>
   <script>
     // Load footer
     fetch('footer.html')
@@ -34,6 +145,76 @@
         const footer = doc.querySelector('.footer');
         document.getElementById('footer-container').appendChild(footer);
       });
+
+    // Load WhatsApp floating icon
+    fetch('shared_wats_icon.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('whatsapp-container').innerHTML = data;
+      });
+
+    // Contact form handling (reusing logic from the floating form)
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactQuoteForm');
+      const firstField = document.getElementById('floatingClientName');
+      if (firstField) { try { firstField.focus(); } catch(e) {} }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        if (!data.clientName || !data.clientPhone || !data.clientAddress || !data.serviceType) {
+          alert('Veuillez remplir tous les champs obligatoires.');
+          return;
+        }
+
+        // Send data to WebForms (Web3Forms)
+        const payload = {
+          access_key: '29b4ae0e-d93b-4257-bc49-7217e37bfba7',
+          subject: 'Nouvelle demande de devis - ZG Nettoyage (Contact)',
+          from_name: data.clientName || 'Client',
+          page: window.location.href,
+          'Nom complet': data.clientName,
+          'Téléphone': data.clientPhone,
+          'Adresse': data.clientAddress,
+          'Service souhaité': data.serviceType,
+          'Message': data.message || '',
+          'Langue': 'fr'
+        };
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+          .then(r => r.json())
+          .then(res => {
+            if (res.success) {
+              // Redirect to thank you page
+              window.location.href = 'merci.html';
+            } else {
+              console.error('Envoi échoué:', res);
+              alert("Une erreur est survenue lors de l'envoi du formulaire. Veuillez réessayer.");
+            }
+          })
+          .catch(err => {
+            console.error('Erreur réseau:', err);
+            alert("Impossible d'envoyer votre demande pour le moment. Vérifiez votre connexion et réessayez.");
+          });
+      });
+
+      // Animate on scroll hookup (optional, if animations.css defines classes)
+      const animated = document.querySelectorAll('.animate-on-scroll');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      animated.forEach(el => observer.observe(el));
+    });
   </script>
 </body>
 </html>

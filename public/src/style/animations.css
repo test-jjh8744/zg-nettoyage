@@ -1,0 +1,288 @@
+/* Simple and Reliable Animation System for ZG Nettoyage */
+
+/* Base animation setup - all elements start hidden */
+.fade-in,
+.slide-in-left,
+.slide-in-right,
+.slide-in-top,
+.slide-in-bottom,
+.scale-in,
+.bounce-in,
+.zoom-in,
+.section-animate,
+.image-reveal {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade In Animation */
+.fade-in {
+  transform: translateY(20px);
+}
+
+.fade-in.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide In From Left */
+.slide-in-left {
+  transform: translateX(-50px);
+}
+
+.slide-in-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide In From Right */
+.slide-in-right {
+  transform: translateX(50px);
+}
+
+.slide-in-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide In From Top */
+.slide-in-top {
+  transform: translateY(-30px);
+}
+
+.slide-in-top.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide In From Bottom */
+.slide-in-bottom {
+  transform: translateY(30px);
+}
+
+.slide-in-bottom.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scale In Animation */
+.scale-in {
+  transform: scale(0.9);
+}
+
+.scale-in.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Bounce In Animation */
+.bounce-in {
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-in.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Zoom In Animation */
+.zoom-in {
+  transform: scale(0.8);
+}
+
+.zoom-in.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Section Animation */
+.section-animate {
+  transform: translateY(40px);
+}
+
+.section-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image Reveal Animation */
+.image-reveal {
+  transform: scale(1.1);
+}
+
+.image-reveal.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover Animations */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-animate {
+  transition: all 0.3s ease;
+}
+
+.btn-animate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(16, 97, 148, 0.3);
+}
+
+/* Stagger Animation Delays */
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+.animate-delay-5 { transition-delay: 0.5s; }
+
+/* Special Effects */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Typewriter Effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #106194;
+  white-space: nowrap;
+  animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #106194; }
+}
+
+/* Performance optimizations */
+.fade-in,
+.slide-in-left,
+.slide-in-right,
+.slide-in-top,
+.slide-in-bottom,
+.scale-in,
+.bounce-in,
+.zoom-in,
+.section-animate,
+.image-reveal {
+  will-change: transform, opacity;
+}
+
+.fade-in.animate-in,
+.slide-in-left.animate-in,
+.slide-in-right.animate-in,
+.slide-in-top.animate-in,
+.slide-in-bottom.animate-in,
+.scale-in.animate-in,
+.bounce-in.animate-in,
+.zoom-in.animate-in,
+.section-animate.animate-in,
+.image-reveal.animate-in {
+  will-change: auto;
+}
+
+/* Mobile responsiveness - reduce animations on small screens */
+@media (max-width: 768px) {
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .slide-in-top,
+  .slide-in-bottom,
+  .scale-in,
+  .bounce-in,
+  .zoom-in,
+  .section-animate,
+  .image-reveal {
+    transition-duration: 0.5s;
+  }
+  
+  .slide-in-left,
+  .slide-in-right {
+    transform: translateX(-20px);
+  }
+  
+  .slide-in-left.animate-in,
+  .slide-in-right.animate-in {
+    transform: translateX(0);
+  }
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-in-left,
+  .slide-in-right,
+  .slide-in-top,
+  .slide-in-bottom,
+  .scale-in,
+  .bounce-in,
+  .zoom-in,
+  .section-animate,
+  .image-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .pulse,
+  .float,
+  .typewriter {
+    animation: none;
+  }
+  
+  .hover-lift:hover,
+  .btn-animate:hover {
+    transform: none;
+  }
+}
+
+/* Debug styles - remove in production */
+.animate-in {
+  /* border: 2px solid green !important; */
+}
+
+/* Ensure animations work on all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Force hardware acceleration for smooth animations */
+.fade-in,
+.slide-in-left,
+.slide-in-right,
+.slide-in-top,
+.slide-in-bottom,
+.scale-in,
+.bounce-in,
+.zoom-in,
+.section-animate,
+.image-reveal {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

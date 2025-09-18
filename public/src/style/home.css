@@ -384,6 +384,41 @@ body {
   z-index: -1;
 }
 
+/* Corner transparency overlay */
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.4) 0%, transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.4) 0%, transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.4) 0%, transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.4) 0%, transparent 30%);
+  z-index: 1;
+}
+
+/* Additional corner accent overlay */
+.hero-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(32, 153, 215, 0.1) 0%, transparent 20%),
+    linear-gradient(225deg, rgba(32, 153, 215, 0.1) 0%, transparent 20%),
+    linear-gradient(45deg, rgba(32, 153, 215, 0.1) 0%, transparent 20%),
+    linear-gradient(315deg, rgba(32, 153, 215, 0.1) 0%, transparent 20%);
+  background-position: top left, top right, bottom left, bottom right;
+  background-size: 40% 40%;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -394,7 +429,7 @@ body {
   align-items: flex-start;
   padding: 15vh 7vw 0;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   min-height: 100vh;
 }
 
