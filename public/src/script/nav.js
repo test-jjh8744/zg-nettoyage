@@ -109,5 +109,47 @@ function loadNavigation() {
     .catch(error => console.error('Error loading navigation:', error));
 }
 
+/**
+ * Ensure favicon exists across all pages.
+ * Prefers ../assets/fav_icon.png; falls back to ../assets/logo-videos/logo.png if not found.
+ */
+function ensureFavicon() {
+  try {
+    const head = document.head || document.getElementsByTagName('head')[0];
+    if (!head) return;
+
+    // Find existing icon link if any
+    let link = head.querySelector('link[rel="icon"], link[rel="shortcut icon"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/png';
+      head.appendChild(link);
+    }
+
+    const primaryHref = '../assets/fav_icon.png';
+    const fallbackHref = '../assets/logo-videos/logo.png';
+
+    // Optimistically set primary
+    link.href = primaryHref;
+
+    // Validate existence by attempting preload
+    const img = new Image();
+    img.onload = function() {
+      // ok, keep primary
+    };
+    img.onerror = function() {
+      // fallback if primary missing
+      link.href = fallbackHref;
+    };
+    img.src = primaryHref;
+  } catch (e) {
+    // no-op
+  }
+}
+
 // Auto-load navigation when DOM is ready
-document.addEventListener('DOMContentLoaded', loadNavigation);
+document.addEventListener('DOMContentLoaded', () => {
+  ensureFavicon();
+  loadNavigation();
+});
